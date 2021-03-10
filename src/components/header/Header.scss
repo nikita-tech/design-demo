@@ -1,0 +1,14 @@
+.header {
+    padding: 0vw 1vw 2vh 1vw;
+    width: 92vw;
+    display: flex;
+    flex-wrap: wrap;
+    height: 10vh;
+    align-items: baseline;
+    justify-content:space-between;
+    box-shadow: 0px 5px 8px #00000029;
+    .logo {
+        position: relative;
+        top: 20px;
+    }
+}

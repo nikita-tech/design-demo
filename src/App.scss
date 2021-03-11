@@ -1,38 +1,254 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  align-items: center;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.heading {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  color: #0A2239;
+  padding: 4vh 5vw;
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  hr {
+    margin-top: 2vh;
+    width: 50px;
+    height: 3px;
+    background-color: #3054D6;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 3vh;
+
+  .card {
+    position: relative;
+    width: 80%;
+    color: #fff;
+    border-radius: 6px;
+    border: 1px solid#0A22391F;
+    margin-bottom: 3vh;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, .15);
+
+    .card-title {
+      background-color: #202942;
+      border-radius: 6px 6px 0px 0px;
+      padding: 3.5vh 5vw;
+
+      p {
+        padding-top: 1vh;
+        font-size: x-small;
+        color: #8492A6;
+      }
+    }
+
+    .card-body {
+      margin: 3vw;
+      color: #0A2239;
+      text-align: left;
+
+      div {
+        display: flex;
+        padding: 1vw;
+        font-weight: 600;
+        font-size: small;
+
+        span {
+          width: 30px;
+        }
+      }
+
+      p {
+        padding-top: 2vh;
+        font-size: small;
+      }
+    }
+
+    .hideDetails {
+      font-size: small;
+      background-color: #2355FC0F;
+      color: #194DFF;
+      opacity: 0.9;
+
+      span img {
+        transform: rotate(180deg);
+        padding-right: 2vw;
+      }
+    }
+
+    .user-details {
+      margin: 3vw;
+      height: 5vh;
+
+      font-size: small;
+
+      .profile {
+        width: 50px;
+      }
+
+      div {
+        text-align: left;
+
+        float: left;
+
+        h3 {
+          color: #0A2239;
+        }
+
+        p {
+          color: #8492A6;
+        }
+      }
+
+    }
+
+    .bid {
+      .rupee {
+        position: relative;
+        top: 1.5vh;
+        padding-right: 2vw;
+      }
+
+      .inputs {
+        input{
+          border: none;
+          font-size: 50px;
+          direction: rtl;
+          width: fit-content;
+        }
+
+        input:focus{
+          outline-width: 0;
+        }
+      }
+      .buttons {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 3vh 3vw;
+        border-bottom: 1px solid #E7EBEE;
+        button {
+          border: 1px solid #E7EBEE;
+          background-color: #F6F9FB80;
+          color: #0A2239;
+          opacity: 0.6;
+          padding: 2vw;
+          border-radius: 18px;
+          font-size: small;
+          font-weight: bold;
+        }
+        button:focus{
+          outline-width: 0;
+          background-color: #3054D60F;
+          border-color: #3054D6;
+          color: #3054D6;
+        }
+      }
+    }
+    .no-display{
+      display: none;
+    }
+
+    .form {
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+
+      &__div {
+        position: relative;
+        margin-bottom: 3vh;
+      }
+
+      &__input {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 85%;
+        height: 25px;
+        font-size: medium;
+        border: 1px solid #818486b3;
+        border-radius: 4px;
+        padding: 1% 3%;
+        outline: none;
+        background: none;
+        z-index: 1;
+      }
+
+      &__label {
+        position: relative;
+        padding: 0 1vw;
+        background-color: #fff;
+        left: 4vw;
+        top: -3.5vh;
+        color: #0D0D0F;
+        opacity: 0.5;
+        transition: .3s;
+        float: left;
+      }
+      &__button{
+        display: block;
+        width: 100%;
+        padding: .75rem 2rem;
+        outline: none;
+        border: none;
+        background-color: #3054D6;
+        color: #fff;        
+        font-size: var(--normal-font-size);
+        border-radius: .5rem;
+        cursor: pointer;
+        transition: .3s;
+
+        &:disabled{
+          background-color: #EDF0F7;
+          color: #2355FC; 
+          opacity: .5;
+        }
+
+        &:hover{
+            box-shadow: 0 10px 36px rgba(0, 0, 0, .15);
+        }
+    }
+    }
+
+    /*Input focus move up label*/
+    .form__input:focus+.form__label {
+      top: -0.8vh;
+      left: 4vw;
+      font-size: x-small;
+      font-weight: 500;
+      opacity: 1;
+      z-index: 10;
+      color: #3054D6;
+    }
+
+    /*Input focus sticky top label*/
+    .form__input:not(:placeholder-shown).form__input:not(:focus)+.form__label {
+      top: -0.8vh;
+      left: 4vw;
+      z-index: 10;
+      font-size: x-small;
+      font-weight: 500;
+      opacity: 1;
+    }
+
+    /*Input focus*/
+    .form__input:focus {
+      border: 1px solid #3054D6;
+    }
   }
 }

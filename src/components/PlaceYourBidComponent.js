@@ -10,15 +10,14 @@ class PlaceYourBid extends Component {
     }
 
     showDetailsFields(){
-        console.log("ff");
         var value = document.getElementById('amount').value;
-        console.log(value)
         var fields = document.getElementById('form');
         if(value>0){
-            
-                fields.className = "form";
+            document.getElementById('amount').style.width=((value.length) * 17) + 'px';
+            fields.className = "form";
         }
         else {
+            document.getElementById('amount').style.width= '17px';
             fields.className = "form no-display";
         }
     }
@@ -49,7 +48,7 @@ class PlaceYourBid extends Component {
                 <form onSubmit={(values => this.handleSubmit(values))}>
                     <div className="inputs">
                         <label className="rupee"><img src="/assets/images/rupee.png" alt="rupee" /></label>
-                        <input type="text" placeholder="0" id="amount" name="amount"  size="1" onChange={this.showDetailsFields} />
+                        <input type="text" placeholder="0" id="amount" name="amount" size="1" maxLength="10" onChange={this.showDetailsFields} />
                     </div>
                     <div className="buttons">
                         <button type="button" value="Fixed Price">Fixed Price</button>

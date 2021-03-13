@@ -120,16 +120,20 @@
     .bid {
       .rupee {
         position: relative;
-        top: 1.5vh;
+        top: 1.2vh;
         padding-right: 2vw;
+      }
+
+      .rupee img{
+        width: 17px;
       }
 
       .inputs {
         input{
           border: none;
-          font-size: 50px;
+          font-size: 30px;
           direction: rtl;
-          width: fit-content;
+          width: 17px;
         }
 
         input:focus{
@@ -165,9 +169,8 @@
     }
 
     .form {
-      justify-content: center;
-      align-items: center;
-      margin: auto;
+      width: 85%;
+      margin: 3vh 0 0 5%;
 
       &__div {
         position: relative;
@@ -178,7 +181,7 @@
         position: relative;
         top: 0;
         left: 0;
-        width: 85%;
+        width: 100%;
         height: 25px;
         font-size: medium;
         border: 1px solid #818486b3;
@@ -190,11 +193,11 @@
       }
 
       &__label {
-        position: relative;
+        position: absolute;
         padding: 0 1vw;
         background-color: #fff;
-        left: 4vw;
-        top: -3.5vh;
+        left: 1.3vw;
+        top: 1vh;
         color: #0D0D0F;
         opacity: 0.5;
         transition: .3s;
@@ -228,7 +231,7 @@
     /*Input focus move up label*/
     .form__input:focus+.form__label {
       top: -0.8vh;
-      left: 4vw;
+      left: 1vw;
       font-size: x-small;
       font-weight: 500;
       opacity: 1;
